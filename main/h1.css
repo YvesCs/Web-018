@@ -138,6 +138,12 @@ body {
     height: auto;
     animation: zoomIn 1s ease-in-out forwards;
     opacity: 0; /* Initially hidden */
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.image-content img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    opacity: 0.9; /* Slight fade effect */
 }
 
 .partners {
@@ -326,6 +332,20 @@ body {
     padding: 30px;
     width: 300px; /* Fixed width for cards */
     text-align: left;
+    opacity: 0; /* Initially hidden */
+    animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.card:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.card:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.card:nth-child(3) {
+    animation-delay: 0.6s;
 }
 
 .card h3 {
@@ -920,6 +940,30 @@ body {
     }
 }
 
+/* Add smooth fade-in-up animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Keyframes for fade-in-slide-up animation */
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Loading screen styles */
 .loading-screen {
     position: fixed;
@@ -959,10 +1003,10 @@ body.loaded .loading-screen {
     transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
-/* Apply fade-in animation to sections */
+/* Apply fade-in-up animation to sections */
 section, footer {
     opacity: 0; /* Initially hidden */
-    animation: fadeIn 1s ease-in-out forwards; /* Fade-in effect */
+    animation: fadeInUp 1s ease-in-out forwards; /* Fade-in effect */
 }
 
 /* Staggered animation delays for sections */
@@ -1008,11 +1052,12 @@ footer {
 
 /* Add hover animation for buttons */
 button, .nav-links li a {
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 button:hover, .nav-links li a:hover {
     transform: translateY(-3px); /* Slight lift on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
 }
 
 /* Add slide-in animation for cards */
@@ -1093,4 +1138,28 @@ button:hover, .nav-links li a:hover {
 
 .nav-links .dropdown-menu li a:hover {
     color: #007bff; /* Change color on hover */
+}
+
+/* Add smooth slide-in animation for cards */
+.cards .card, .features .feature-card {
+    opacity: 0; /* Initially hidden */
+    animation: fadeInUp 2s ease-in-out forwards;
+}
+
+.cards .card:nth-child(1), .features .feature-card:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.cards .card:nth-child(2), .features .feature-card:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.cards .card:nth-child(3), .features .feature-card:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+/* Apply fade-in-slide-up animation to elements */
+.scroll-animation {
+    opacity: 0; /* Initially hidden */
+    animation: fadeInSlideUp 1s ease-in-out forwards;
 }
