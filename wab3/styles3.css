@@ -50,6 +50,45 @@ body {
     color: #007bff;
 }
 
+.navbar .dropdown {
+    position: relative; /* Position relative for dropdown menu */
+}
+
+.navbar .dropdown-menu {
+    display: none; /* Hide dropdown by default */
+    position: absolute;
+    top: 100%; /* Position below the parent item */
+    left: 0;
+    background-color: #fff; /* White background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    padding: 0.5rem 0;
+    list-style: none;
+    margin: 0;
+    z-index: 1000;
+    border-radius: 5px; /* Rounded corners */
+}
+
+.navbar .dropdown-menu li {
+    padding: 0.5rem 1rem;
+}
+
+.navbar .dropdown-menu li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9rem;
+    display: block;
+    transition: background 0.3s, color 0.3s;
+}
+
+.navbar .dropdown-menu li a:hover {
+    background-color: #007bff; /* Blue background on hover */
+    color: #fff; /* White text on hover */
+}
+
+.navbar .dropdown:hover .dropdown-menu {
+    display: block; /* Show dropdown on hover */
+}
+
 .demo-btn {
     background: #007bff;
     color: #fff;
