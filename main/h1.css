@@ -4,15 +4,20 @@ body {
 }
 
 .container {
-    max-width: 60%; /* 100% - 20% on each side */
-    margin: 0 auto; /* Center the container */
+    margin: 0 15%; /* Corrected to 5% margin on left and right */
+    align-items: center; /* Vertically center items */
+}
+
+.container2 {
+    margin: 0 15%; /* Corrected to 5% margin on left and right */
+    align-items: center; /* Vertically center items */
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space between logo and nav items */
 }
 
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0; /* Adjust padding to fit within the container */
+    margin: 0;
+    padding: 10px 0;
     background-color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -51,4 +56,781 @@ body {
 
 .demo-button:hover {
     background-color: #0056b3;
+}
+
+.homepage {
+    padding: 100px 0;
+}
+
+.text-content {
+    flex: 1;
+}
+
+.text-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #000000; /* Ensure white text */
+}
+
+.text-content p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    color: #b0b0b0; /* Slightly lighter text for paragraph */
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between buttons */
+}
+
+.learn-more-button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+.learn-more-button:hover {
+    background-color: #0056b3;
+}
+
+.watch-demo-button {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    color: #000000;
+    font-size: 1rem;
+    cursor: pointer;
+    gap: 10px; /* Space between icon and text */
+}
+
+.watch-demo-button img {
+    width: 20px;
+    height: 20px;
+}
+
+.image-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-content img {
+    max-width: 100%;
+    height: auto;
+}
+
+.partners {
+    padding: 0;
+}
+
+.partners .container {
+    display: flex;
+    justify-content: center; /* Center the image */
+    align-items: center;
+}
+
+.partners img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.why-choose {
+    padding: 100px 0;
+    background-color: #f8fbff; /* Light background color */
+    text-align: center;
+    display: flex;
+    width: 100%;
+    flex-direction: column; /* Change layout to vertical */
+    align-items: center; /* Center align all content */
+    gap: 30px; /* Add spacing between elements */
+}
+
+.why-choose h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+.why-choose p {
+    font-size: 1.2rem;
+    color: #6c757d; /* Gray text for description */
+    margin-bottom: 50px;
+}
+
+.features {
+    display: flex;
+    flex-direction: row; /* Change layout to horizontal */
+    gap: 30px; /* Add spacing between feature cards */
+    justify-content: center; /* Center align the cards horizontally */
+}
+
+.feature-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    flex: 1;
+    text-align: center;
+}
+
+.feature-card img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #000000;
+}
+
+.feature-card p {
+    font-size: 1rem;
+    color: #6c757d;
+    line-height: 1.6;
+}
+
+.alternate-section {
+    padding: 100px 0;
+    background-color: #ffffff; /* Set white background */
+}
+
+.alternate-section .container {
+    display: flex;
+    flex-direction: row; /* Align text and image side by side */
+    gap: 50px; /* Add spacing between text and image */
+    align-items: center; /* Vertically center items */
+}
+
+.alternate-section.reverse {
+    flex-direction: row-reverse; /* Reverse the order for text and image */
+}
+
+.alternate-section .text-content {
+    flex: 1;
+    text-align: left;
+}
+
+.alternate-section.reverse .text-content {
+    text-align: right;
+}
+
+.alternate-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #000000; /* Black text */
+    margin-bottom: 20px;
+}
+
+.alternate-section p {
+    font-size: 1.2rem;
+    color: #6c757d; /* Gray text */
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.alternate-section .buttons {
+    display: flex;
+    gap: 20px; /* Space between buttons */
+}
+
+.alternate-section.reverse .buttons {
+    justify-content: flex-end; /* Align buttons to the right */
+    display: flex; /* Ensure flexbox is applied */
+}
+
+.alternate-section img {
+    flex: 1;
+    max-width: 50%; /* Reduce the image size */
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px; /* Keep rounded corners */
+    box-shadow: none; /* Remove shadow */
+}
+
+.card-section {
+    padding: 100px 0;
+    background-color: #f8fbff; /* Light blue background */
+    text-align: center;
+}
+
+.card-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 50px;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Space between cards */
+    margin-bottom: 50px;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 300px; /* Fixed width for cards */
+    text-align: left;
+}
+
+.card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #6c757d;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.card .tags {
+    display: flex;
+    gap: 10px; /* Space between tags */
+}
+
+.card .tag {
+    background-color: #f0f8ff;
+    color: #007bff;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.card .tag:hover {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+.card-section .learn-more-button {
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+.card-section .learn-more-button:hover {
+    background-color: #0056b3;
+}
+
+.testimonial-section {
+    padding: 100px 0;
+    background-color: #ffffff; /* Black background */
+    color: #000000; /* White text */
+    text-align: center;
+}
+
+.testimonial-section-header {
+    display: flex;
+    justify-content: space-between; /* Space between heading and buttons */
+    align-items: center; /* Vertically align heading and buttons */
+    margin-bottom: 50px;
+}
+
+.testimonial-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #000000;
+    margin: 0; /* Remove bottom margin for alignment */
+}
+
+.testimonials {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Space between testimonial cards */
+    margin-bottom: 50px;
+}
+
+.testimonial-card {
+    background-color: #ffffff;
+    color: #6c757d;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-top: 50px;
+    width: 400px; /* Fixed width for cards */
+    text-align: left;
+    position: relative;
+}
+
+.testimonial-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: absolute;
+    top: -30px;
+    left: 30px;
+    border: 3px solid #ffffff; /* White border around the image */
+}
+
+.testimonial-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 40px 0 20px; /* Add margin to account for the image */
+    color: #6c757d;
+}
+
+.testimonial-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 5px;
+}
+
+.testimonial-card span {
+    font-size: 1rem;
+    color: #6c757d;
+}
+
+.navigation-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between buttons */
+}
+
+.navigation-button {
+    background-color: #f8fbff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #000000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navigation-button:hover {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+.statistics-section {
+    background-color: #0056b3; /* Blue background */
+    color: #ffffff; /* White text */
+    padding: 50px 0;
+    text-align: center;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(50px); /* Slide-in effect */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth fade-in and slide-in */
+}
+
+.statistics-section.visible {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Reset position */
+}
+
+.statistics-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px; /* Space between statistic items */
+}
+
+.statistic-item {
+    text-align: center;
+}
+
+.statistic-item h3 {
+    font-size: 3rem; /* Large number size */
+    font-weight: 700;
+    margin: 0;
+    transition: all 0.3s ease-in-out; /* Smooth transition for animation */
+}
+
+.statistic-item p {
+    font-size: 1.2rem; /* Smaller text size */
+    margin: 10px 0 0;
+    font-weight: 500;
+}
+
+.contact-section {
+    background-color: #f8fbff; /* Light blue background */
+    padding: 100px 0; /* Vertical padding only */
+}
+
+.contact-section .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Center align vertically */
+    gap: 50px;
+}
+
+.contact-info {
+    flex: 1;
+    max-width: 45%; /* Limit width to match the image */
+}
+
+.contact-info h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 20px;
+    line-height: 1.4; /* Adjust line height for better spacing */
+}
+
+.contact-info p {
+    font-size: 1.2rem;
+    color: #6c757d;
+    line-height: 1.8;
+    margin-bottom: 40px; /* Adjust spacing below paragraph */
+}
+
+.contact-info .info-item {
+    margin-bottom: 20px;
+}
+
+.contact-info .info-item span {
+    display: block;
+    font-size: 1rem;
+    color: #6c757d;
+    margin-bottom: 5px;
+}
+
+.contact-info .info-item strong {
+    font-size: 1.2rem;
+    color: #000000;
+}
+
+.contact-info h3 {
+    margin-bottom: 10px; /* Add spacing below the heading */
+}
+
+.contact-info .groups {
+    margin-top: 10px; /* Add spacing above the groups */
+}
+
+.contact-info .groups .group {
+    display: inline-block; /* Align items horizontally */
+    margin-right: 25px; /* Add spacing between groups */
+}
+
+.contact-form {
+    flex: 1;
+    max-width: 45%; /* Limit width to match the image */
+    background-color: #ffffff;
+    padding: 40px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Larger shadow for depth */
+    display: flex;
+    flex-direction: column; /* Ensure proper alignment */
+    justify-content: space-between; /* Align content evenly */
+    height: 100%; /* Match height with .contact-info */
+}
+
+.contact-form h3 {
+    font-size: 2rem; /* Larger heading */
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 30px;
+}
+
+.contact-form .form-group {
+    margin-bottom: 25px; /* Increased spacing between fields */
+}
+
+.contact-form label {
+    display: block;
+    font-size: 1rem;
+    color: #6c757d;
+    margin-bottom: 10px; /* Increased spacing below labels */
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px; /* Larger padding for inputs */
+    font-size: 1rem;
+    color: #000000;
+    border: none; /* Remove border */
+    border-bottom: 2px solid #dcdcdc; /* Bottom border only */
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-bottom-color: #007bff; /* Highlighted bottom border */
+}
+
+.contact-form textarea {
+    resize: none;
+    height: 120px; /* Taller textarea */
+}
+
+.contact-form button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 15px 30px; /* Larger button */
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 10px; /* Rounded button */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.newsletter-section {
+    background-color: #0056ff; /* Bright blue background */
+    padding: 50px 0; /* Vertical padding only */
+}
+
+.newsletter-section .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.newsletter-text {
+    flex: 1;
+}
+
+.newsletter-text h2 {
+    font-size: 2.5rem; /* Large heading */
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    color: #ffffff;
+}
+
+.newsletter-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #d9e6ff; /* Slightly lighter text for description */
+}
+
+.newsletter-form {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.newsletter-form input {
+    width: 70%;
+    padding: 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px 0 0 10px; /* Rounded corners on the left */
+    outline: none;
+    background-color: #d9e6ff; /* Light blue background for input */
+    color: #000000; /* Black text */
+}
+
+.newsletter-form button {
+    padding: 15px 30px;
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: #ffffff; /* White background for button */
+    color: #0056ff; /* Blue text */
+    border: none;
+    border-radius: 0 10px 10px 0; /* Rounded corners on the right */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.newsletter-form button:hover {
+    background-color: #d9e6ff; /* Light blue hover effect */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.footer {
+    background-color: #f8fbff; /* Light gray background */
+    padding: 50px 0; /* Vertical padding */
+    color: #6c757d; /* Gray text color */
+    font-size: 1rem;
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    gap: 30px;
+}
+
+.footer-logo {
+    flex: 1;
+    max-width: 25%; /* Adjust width for larger logo */
+    text-align: left; /* Align logo to the left */
+    margin-top: -100px; /* Move the logo higher */
+}
+
+.footer-logo img {
+    width: 120px; /* Further enlarged logo size */
+    margin-bottom: 0; /* Remove unnecessary margin */
+}
+
+.footer-links {
+    flex: 2;
+    display: flex;
+    justify-content: flex-end; /* Align links to the right */
+    gap: 150px; /* Increase spacing between sections */
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    text-decoration: none;
+    color: #6c757d;
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: #0056ff; /* Blue hover effect */
+}
+
+.footer-contacts {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px; /* Increase spacing between groups */
+    border-top: 1px solid #dcdcdc; /* Top border */
+    padding-top: 20px; /* Spacing above the border */
+    margin-top: 20px; /* Spacing below the main links */
+}
+
+.footer-contacts .contact-info {
+    display: block; /* Align groups horizontally */
+    justify-content: space-between; /* Space between Group 1 and Group 2 */
+    gap: 40px; /* Reduce spacing between groups */
+}
+
+.footer-contacts .contact-info .group {
+    display: inline-block; /* Align items horizontally */
+}
+
+.footer-contacts .contact-info p,
+.footer-contacts .contact-info .group a {
+    font-size: 0.8rem; /* Make text smaller */
+}
+
+.footer-contacts .contact-info p {
+    font-size: 0.9rem; /* Reduce font size */
+    color: #6c757d; /* Ensure consistent text color */
+    margin: 5px 0; /* Adjust spacing */
+}
+
+.footer-contacts .social-icons {
+    text-align: right; /* Align content to the right */
+}
+
+.footer-contacts .social-icons h3 {
+    text-align: left; /* Keep the heading aligned to the left */
+    margin-bottom: 10px; /* Add spacing below the heading */
+}
+
+.footer-contacts .social-icons .icons {
+    display: flex; /* Align icons horizontally */
+    justify-content: flex-end; /* Push icons to the right */
+    gap: 15px; /* Add spacing between icons */
+}
+
+.footer-contacts .social-icons img {
+    width: 30px; /* Icon size */
+    height: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.footer-contacts .social-icons img:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+.footer-bottom {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space between left and right content */
+    align-items: center; /* Vertically align items */
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #6c757d;
+    border-top: 1px solid #dcdcdc; /* Add dividing line */
+    padding-top: 20px; /* Add spacing above the line */
+}
+
+.footer-bottom a {
+    text-decoration: none;
+    color: #6c757d;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+    color: #0056ff; /* Blue hover effect */
+}
+
+.contact-info h3 {
+    margin: 0 0;
+}
+
+.social-icons h3 {
+    margin: 0 0;
+}
+
+.footer-contacts h3 {
+    font-size: 1.2rem; /* Adjust heading size */
+    font-weight: bold; /* Make heading bold */
+    color: #000000; /* Black text */
+    margin-bottom: 10px; /* Add spacing below heading */
+}
+
+.footer-contacts .icons {
+    display: flex; /* Align icons horizontally */
+    gap: 15px; /* Add spacing between icons */
+    align-items: center; /* Vertically align icons */
+}
+
+.footer-contacts .icons img {
+    width: 30px; /* Icon size */
+    height: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Smooth zoom effect */
+}
+
+.footer-contacts .icons img:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
 }
