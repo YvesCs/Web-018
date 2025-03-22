@@ -438,6 +438,7 @@ body {
     gap: 4rem; /* Increase spacing between squares to 4rem */
     justify-content: center; /* Center the grid horizontally */
     align-items: center; /* Center the grid vertically */
+    margin: 1rem 1rem; /* Add margin around the grid */
 }
 
 .benefit {
@@ -452,7 +453,7 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center; /* Center-align text */
     gap: 1rem; /* Add spacing between icon and text */
-    margin: auto; /* Center the boxes within the grid */
+    margin: 1rem 1rem; /* Add margin around each box */
     overflow: hidden; /* Prevent content from overflowing the box */
     padding: 15%; /* Ensure text is 15% away from the edges */
 }
@@ -985,4 +986,49 @@ body {
     font-size: 0.9rem;
     font-weight: bold;
     text-align: center;
+}
+
+.book-animation {
+    position: relative;
+    width: 200px;
+    height: 250px;
+    margin: 2rem auto;
+    perspective: 1000px; /* Add perspective for 3D effect */
+}
+
+.book {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #007bff; /* Blue cover */
+    border-radius: 5px;
+    transform-origin: left;
+    transform: rotateY(0deg);
+    transition: transform 1s ease-in-out; /* Smooth animation */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+}
+
+.book:hover {
+    transform: rotateY(-120deg); /* Open the book on hover */
+}
+
+.book .pages {
+    position: absolute;
+    width: 95%;
+    height: 90%;
+    background: #fff; /* White pages */
+    top: 5%;
+    left: 5%;
+    border-radius: 3px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1); /* Inner shadow for pages */
+}
+
+.book .spine {
+    position: absolute;
+    width: 5%;
+    height: 100%;
+    background: #0056b3; /* Darker blue for spine */
+    left: 0;
+    top: 0;
+    border-radius: 5px 0 0 5px;
 }
