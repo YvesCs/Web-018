@@ -2,18 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"="width=device-width, initial-scale=1.0">
     <title>Navbar</title>
     <link rel="stylesheet" href="h1.css">
 </head>
 <body>
+    <!-- Loading screen -->
+    <div class="loading-screen">
+        <div class="spinner"></div>
+    </div>
+
     <nav class="navbar">
         <div class="container2">
             <div class="logo">
                 <img src="./images/image.png" alt="Logo">
             </div>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
+                <li class="dropdown">
+                    <a href="#home">Home</a>
+                    <img src="./images/18.png" alt="Dropdown Icon" class="dropdown-toggle">
+                    <ul class="dropdown-menu">
+                        <li><a href="#home-1">Home-1</a></li>
+                        <li><a href="#home-2">Home-2</a></li>
+                        <li><a href="#home-3">Home-3</a></li>
+                    </ul>
+                </li>
                 <li><a href="#solutions">Solutions</a></li>
                 <li><a href="#pages">Pages</a></li>
                 <li><a href="#elements">Elements</a></li>
@@ -326,6 +339,91 @@
         }
 
         window.addEventListener('scroll', handleScroll);
+    </script>
+    <script>
+        const sections = document.querySelectorAll('section, footer');
+
+        function handleScrollAnimations() {
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+
+                if (sectionTop < windowHeight - 100) {
+                    section.style.opacity = '1'; // Ensure visibility
+                    section.style.animationPlayState = 'running'; // Start animation
+                }
+            });
+        }
+
+        window.addEventListener('scroll', handleScrollAnimations);
+        window.addEventListener('load', handleScrollAnimations); // Trigger on page load
+    </script>
+    <script>
+        // Handle dropdown toggle
+        document.addEventListener('DOMContentLoaded', () => {
+            const dropdown = document.querySelector('.dropdown');
+            const dropdownMenu = document.querySelector('.dropdown-menu');
+            const dropdownIcon = document.querySelector('.dropdown-toggle');
+            const dropdownLink = dropdown.querySelector('a');
+
+            dropdown.addEventListener('mouseenter', () => {
+                dropdownMenu.classList.add('visible'); // Show dropdown on hover
+                dropdownIcon.style.transform = 'rotate(180deg)'; // Rotate icon
+                dropdownLink.style.color = '#007bff'; // Change "Home" button color
+            });
+
+            dropdown.addEventListener('mouseleave', () => {
+                if (!dropdownMenu.classList.contains('clicked')) {
+                    dropdownMenu.classList.remove('visible'); // Hide dropdown on mouse leave
+                    dropdownIcon.style.transform = ''; // Reset icon rotation
+                    dropdownLink.style.color = ''; // Reset "Home" button color
+                }
+            });
+
+            dropdown.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent click from propagating
+                dropdownMenu.classList.toggle('clicked'); // Toggle clicked state
+                dropdownMenu.classList.add('visible'); // Ensure dropdown is visible
+                dropdownIcon.style.transform = dropdownMenu.classList.contains('clicked') ? 'rotate(180deg)' : ''; // Toggle icon rotation
+                dropdownLink.style.color = dropdownMenu.classList.contains('clicked') ? '#007bff' : ''; // Toggle "Home" button color
+            });
+
+            document.addEventListener('click', () => {
+                dropdownMenu.classList.remove('visible', 'clicked'); // Hide dropdown on outside click
+                dropdownIcon.style.transform = ''; // Reset icon rotation
+                dropdownLink.style.color = ''; // Reset "Home" button color
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll(
+                'section, footer, .cards .card, .features .feature-card, .image-content img, .alternate-section img'
+            );
+
+            function handleScrollAnimations() {
+                animatedElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+
+                    if (elementTop < windowHeight - 100) {
+                        element.style.opacity = '1'; // Ensure visibility
+                        element.style.animationPlayState = 'running'; // Start animation
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', handleScrollAnimations);
+            window.addEventListener('load', handleScrollAnimations); // Trigger on page load
+        });
+    </script>
+    <script>
+        // Show loading screen for 3 seconds
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.body.classList.add('loaded'); // Add class to hide loading screen
+            }, 1000); // 3-second delay
+        });
     </script>
 </body>
 </html>
