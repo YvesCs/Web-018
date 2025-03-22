@@ -15,8 +15,9 @@
             <ul>
                 <li class="dropdown">
                     <a href="#home">Home</a>
+                    <img src="../main/images/18.png" alt="Dropdown Icon" class="dropdown-toggle">
                     <ul class="dropdown-menu">
-                        <li><a href="file:///C:/Users/User/Desktop/Web-018/web1/Web-018/main/h1.html">Home-1</a></li>
+                        <li><a href="../main/h1.html">Home-1</a></li>
                         <li><a href="#home-2">Home-2</a></li>
                         <li><a href="#home-3">Home-3</a></li>
                     </ul>
@@ -310,6 +311,42 @@
             </div>
         </div>
     </footer>
-    <script src="scripts.js"></script>
+    <script>
+        // Handle dropdown toggle
+        document.addEventListener('DOMContentLoaded', () => {
+            const dropdown = document.querySelector('.dropdown');
+            const dropdownMenu = document.querySelector('.dropdown-menu');
+            const dropdownIcon = document.querySelector('.dropdown-toggle');
+            const dropdownLink = dropdown.querySelector('a');
+
+            dropdown.addEventListener('mouseenter', () => {
+                dropdownMenu.classList.add('visible'); // Show dropdown on hover
+                dropdownIcon.style.transform = 'rotate(180deg)'; // Rotate icon
+                dropdownLink.style.color = '#007bff'; // Change "Home" button color
+            });
+
+            dropdown.addEventListener('mouseleave', () => {
+                if (!dropdownMenu.classList.contains('clicked')) {
+                    dropdownMenu.classList.remove('visible'); // Hide dropdown on mouse leave
+                    dropdownIcon.style.transform = ''; // Reset icon rotation
+                    dropdownLink.style.color = ''; // Reset "Home" button color
+                }
+            });
+
+            dropdown.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent click from propagating
+                dropdownMenu.classList.toggle('clicked'); // Toggle clicked state
+                dropdownMenu.classList.add('visible'); // Ensure dropdown is visible
+                dropdownIcon.style.transform = dropdownMenu.classList.contains('clicked') ? 'rotate(180deg)' : ''; // Toggle icon rotation
+                dropdownLink.style.color = dropdownMenu.classList.contains('clicked') ? '#007bff' : ''; // Toggle "Home" button color
+            });
+
+            document.addEventListener('click', () => {
+                dropdownMenu.classList.remove('visible', 'clicked'); // Hide dropdown on outside click
+                dropdownIcon.style.transform = ''; // Reset icon rotation
+                dropdownLink.style.color = ''; // Reset "Home" button color
+            });
+        });
+    </script>
 </body>
 </html>

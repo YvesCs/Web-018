@@ -52,41 +52,64 @@ body {
 
 .navbar .dropdown {
     position: relative; /* Position relative for dropdown menu */
+    display: inline-flex; /* Align with other nav items */
+    align-items: center;
+    cursor: pointer;
+}
+
+.navbar .dropdown img {
+    width: 20px; /* Adjust icon size */
+    height: 20px;
+    margin-left: 5px; /* Add spacing between text and icon */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.navbar .dropdown-menu.visible + img {
+    transform: rotate(180deg); /* Rotate icon when dropdown is visible */
+}
+
+.navbar .dropdown-menu.visible ~ a {
+    color: #007bff; /* Change "Home" button color when dropdown is visible */
+    transition: color 0.3s ease; /* Smooth color transition */
 }
 
 .navbar .dropdown-menu {
-    display: none; /* Hide dropdown by default */
     position: absolute;
-    top: 100%; /* Position below the parent item */
+    top: 100%; /* Position below the dropdown */
     left: 0;
-    background-color: #fff; /* White background */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
-    padding: 0.5rem 0;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
+    border-radius: 5px;
+    padding: 10px 0;
     list-style: none;
     margin: 0;
-    z-index: 1000;
-    border-radius: 5px; /* Rounded corners */
+    opacity: 0; /* Initially hidden */
+    visibility: hidden; /* Prevent interaction */
+    transform: translateY(-10px); /* Slide-up effect */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth dropdown */
+    z-index: 1000; /* Ensure it appears above other elements */
+    width: 300px; /* Increase the width of the dropdown menu */
+}
+
+.navbar .dropdown-menu.visible {
+    opacity: 1; /* Show on toggle */
+    visibility: visible; /* Allow interaction */
+    transform: translateY(0); /* Slide down */
 }
 
 .navbar .dropdown-menu li {
-    padding: 0.5rem 1rem;
+    padding: 5px 20px;
 }
 
 .navbar .dropdown-menu li a {
     text-decoration: none;
-    color: #333;
+    color: black;
     font-size: 0.9rem;
-    display: block;
-    transition: background 0.3s, color 0.3s;
+    transition: color 0.3s ease; /* Smooth hover effect */
 }
 
 .navbar .dropdown-menu li a:hover {
-    background-color: #007bff; /* Blue background on hover */
-    color: #fff; /* White text on hover */
-}
-
-.navbar .dropdown:hover .dropdown-menu {
-    display: block; /* Show dropdown on hover */
+    color: #007bff; /* Change color on hover */
 }
 
 .demo-btn {
